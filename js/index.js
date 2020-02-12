@@ -14,12 +14,14 @@ document.querySelectorAll(".nav-link").forEach(el => {
 });
 
 
-// 2. Images change size when mouse enters and leaves
+// 2. Images change size when mouse enters
 document.querySelectorAll("img").forEach(el => {
     el.addEventListener("mouseenter", () => {
         el.style.transform = "scale(1.05)";
         el.style.transition = "transform 1s";
     });
+
+// 3. Images resume size when mouse leaves
     el.addEventListener("mouseleave", () => {
         el.style.transform = "scale(1)";
     });
@@ -29,14 +31,14 @@ document.querySelectorAll("img").forEach(el => {
 const header = document.querySelector(".main-navigation");
 header.style.zIndex = "1";
 
-// 3. Paragraph font-size increases when wheeled over
+// 4. Paragraph font-size increases when wheeled over
 document.querySelectorAll("p").forEach(el => {
     el.addEventListener("wheel", (el) => {
         el.target.style.fontSize = "1.8rem";
     });
 });
 
-// 4. Buttons at bottom of page change colors when clicked
+// 5. Buttons at bottom of page change colors when clicked
 document.querySelectorAll(".btn").forEach(el => {
     el.addEventListener("click", (el) => {
         el.target.style.background = "#ffebcd";
@@ -44,6 +46,23 @@ document.querySelectorAll(".btn").forEach(el => {
     });
 });
 
+// 6. Double clicking content titles will make them bold
+document.querySelectorAll(".logo-heading, h2, h4").forEach(el => {
+    el.addEventListener("dblclick", (el) => {
+        el.target.style.fontWeight = "bold";
+    });
+});
+
+// 7. Header image changes when page is resized
+const funBus = document.querySelector("header img");
+window.addEventListener("resize", () => {
+    funBus.src = "https://meetingsandconventionspei.com/wp-content/uploads/2015/02/Tour-Bus-Header.jpg"
+});
+
+// 8. Right click on mouse creates an alert message
+document.addEventListener("auxclick", (el) => {
+    alert("DON'T RIGHT CLICK THIS PAGE!");
+});
 const images = document.querySelectorAll("img");
 
 
