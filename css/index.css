@@ -350,3 +350,8 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+#form {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1%;
+}
